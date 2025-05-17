@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wealthora.info</title>
+  <link href="./output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+
+  <script>
+    (function () {
+      window.googletag = window.googletag || { cmd: [] };
+
+      let adSlot1, adSlot2, anchorSlot;
+      const refreshInterval = 30000;
+      let refreshTimer;
+
+      function setupAds() {
+        googletag.cmd.push(function () {
+          const pubads = googletag.pubads();
+          pubads.enableSingleRequest();
+          pubads.setCentering(true);
+
+          if (window.geoTarget) {
+            pubads.setLocation(window.geoTarget);
+          }
+
+          adSlot1 = googletag
+            .defineSlot(
+              "/23270265301/sahajanand_wealthora.info_native",
+              [
+                [728, 90],
+                [300, 250],
+              ],
+              "ad-slot-1"
+            )
+            .addService(pubads);
+
+          adSlot2 = googletag
+            .defineSlot(
+              "/23270265301/sahajanand_wealthora.info_native",
+              [
+                [300, 250],
+                [336, 280],
+              ],
+              "ad-slot-2"
+            )
+            .addService(pubads);
+
+          anchorSlot = googletag.defineOutOfPageSlot(
+            "/23270265301/sahajanand_wealthora.info_native",
+            googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+          );
+
+          if (anchorSlot) {
+            anchorSlot.addService(pubads);
+            anchorSlot.setElementId("ad-anchor-slot");
+          }
+
+          pubads.addEventListener("slotRenderEnded", function (event) {
+            const slotId = event.slot.getSlotElementId();
+            const isEmpty = event.isEmpty;
+
+            if (isEmpty && document.getElementById(slotId)) {
+              document.getElementById(slotId).style.display = "none";
+            }
+          });
+
+          googletag.enableServices();
+
+          try {
+            if (document.getElementById("ad-slot-1")) {
+              googletag.display("ad-slot-1");
+            }
+            if (document.getElementById("ad-slot-2")) {
+              googletag.display("ad-slot-2");
+            }
+            if (document.getElementById("ad-anchor-slot")) {
+              googletag.display("ad-anchor-slot");
+            }
+          } catch (error) {
+            console.log("Error displaying ads:", error);
+          }
+
+          setupAdRefresh();
+        });
+      }
+
+      function setupAdRefresh() {
+        if (refreshTimer) {
+          clearInterval(refreshTimer);
+        }
+
+        refreshTimer = setInterval(function () {
+          try {
+            const slotsToRefresh = [];
+            if (adSlot1) slotsToRefresh.push(adSlot1);
+            if (adSlot2) slotsToRefresh.push(adSlot2);
+
+            if (slotsToRefresh.length > 0) {
+              googletag.cmd.push(function () {
+                googletag.pubads().refresh(slotsToRefresh);
+              });
+            }
+          } catch (error) {
+            console.log("Error refreshing ads:", error);
+            clearInterval(refreshTimer);
+          }
+        }, refreshInterval);
+      }
+
+      function checkAdBlocker() {
+        const testAd = document.createElement("div");
+        testAd.innerHTML = "&nbsp;";
+        testAd.className = "adsbox";
+        document.body.appendChild(testAd);
+
+        setTimeout(function () {
+          if (testAd.offsetHeight === 0) {
+            console.log("Ad blocker detected");
+          }
+          document.body.removeChild(testAd);
+        }, 100);
+      }
+
+      if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+      ) {
+        setupAds();
+        checkAdBlocker();
+      } else {
+        document.addEventListener("DOMContentLoaded", function () {
+          setupAds();
+          checkAdBlocker();
+        });
+      }
+
+      window.addEventListener("beforeunload", function () {
+        if (refreshTimer) {
+          clearInterval(refreshTimer);
+        }
+      });
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body class="bg-slate-50 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-indigo-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold tracking-tight">wealthora<span
+          class="text-teal-300">info</span></a>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="hover:text-teal-300 transition duration-300">Home</a>
+        <a href="benefits.html" class="hover:text-teal-300 transition duration-300">Benefits</a>
+        <a href="process.html"
+          class="hover:text-teal-300 transition duration-300 font-semibold text-teal-300">Process</a>
+      </div>
+      <button class="md:hidden focus:outline-none" id="menu-toggle">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden bg-indigo-800 px-4 py-2" id="mobile-menu">
+      <a href="index.html" class="block py-2 hover:text-teal-300 transition duration-300">Home</a>
+      <a href="benefits.html" class="block py-2 hover:text-teal-300 transition duration-300">Benefits</a>
+      <a href="process.html"
+        class="block py-2 hover:text-teal-300 transition duration-300 font-semibold text-teal-300">Process</a>
+      <a href="#" class="block py-2 hover:text-teal-300 transition duration-300">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="bg-gradient-to-r from-indigo-800 to-indigo-600 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Simple Application Process
+      </h1>
+      <p class="text-xl max-w-2xl mx-auto">
+        Our streamlined process makes it easy to get the funding you need for
+        your education.
+      </p>
+    </div>
+  </header>
+
+  <!-- ads  -->
+  <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+    <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+
+  </div>
+
+
+
+
+  <!-- Process Steps -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row mb-16">
+          <div class="md:w-1/3 flex justify-center md:justify-start mb-6 md:mb-0">
+            <div class="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center">
+              <span class="text-indigo-700 text-3xl font-bold">1</span>
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-900">
+              Check Eligibility
+            </h2>
+            <p class="text-slate-700 mb-4">
+              Before applying, make sure you meet our basic eligibility
+              requirements:
+            </p>
+            <ul class="space-y-3 text-slate-700 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-teal-500 mt-1 mr-3"></i>
+                <span>Enrolled or accepted at an eligible educational
+                  institution</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-teal-500 mt-1 mr-3"></i>
+                <span>Meet credit requirements or have a qualified cosigner</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-teal-500 mt-1 mr-3"></i>
+                <span>Be a citizen or permanent resident (or have an eligible
+                  visa)</span>
+              </li>
+            </ul>
+            <a href="#"
+              class="text-teal-600 font-semibold hover:text-teal-800 transition duration-300 inline-flex items-center">
+              View full eligibility requirements
+              <i class="fas fa-chevron-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row mb-16">
+          <div class="md:w-1/3 flex justify-center md:justify-start mb-6 md:mb-0">
+            <div class="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center">
+              <span class="text-indigo-700 text-3xl font-bold">2</span>
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-900">
+              Gather Documents
+            </h2>
+            <p class="text-slate-700 mb-4">
+              Having these documents ready will speed up your application:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="bg-slate-100 p-4 rounded-lg">
+                <h3 class="font-semibold mb-2 text-indigo-800">
+                  For Students
+                </h3>
+                <ul class="text-sm text-slate-700 space-y-2">
+                  <li class="flex items-start">
+                    <i class="fas fa-file-alt text-teal-500 mr-2 mt-1"></i>
+                    <span>Admission letter or enrollment verification</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-file-invoice-dollar text-teal-500 mr-2 mt-1"></i>
+                    <span>Cost of attendance from your school</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-id-card text-teal-500 mr-2 mt-1"></i>
+                    <span>Government-issued ID</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-slate-100 p-4 rounded-lg">
+                <h3 class="font-semibold mb-2 text-indigo-800">
+                  For Cosigners
+                </h3>
+                <ul class="text-sm text-slate-700 space-y-2">
+                  <li class="flex items-start">
+                    <i class="fas fa-file-alt text-teal-500 mr-2 mt-1"></i>
+                    <span>Proof of income (pay stubs, tax returns)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-file-invoice-dollar text-teal-500 mr-2 mt-1"></i>
+                    <span>Employment verification</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-id-card text-teal-500 mr-2 mt-1"></i>
+                    <span>Government-issued ID</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row mb-16">
+          <div class="md:w-1/3 flex justify-center md:justify-start mb-6 md:mb-0">
+            <div class="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center">
+              <span class="text-indigo-700 text-3xl font-bold">3</span>
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-900">
+              Complete Application
+            </h2>
+            <p class="text-slate-700 mb-6">
+              Our online application takes about 15-20 minutes to complete.
+              You'll need to:
+            </p>
+            <div class="bg-indigo-50 p-6 rounded-lg mb-6">
+              <div class="flex items-start mb-4">
+                <div class="bg-teal-500 text-white p-2 rounded-full mr-4">
+                  <i class="fas fa-user-edit"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    Personal Information
+                  </h3>
+                  <p class="text-sm text-slate-700">
+                    Basic details about yourself and your educational program
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start mb-4">
+                <div class="bg-teal-500 text-white p-2 rounded-full mr-4">
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">Loan Details</h3>
+                  <p class="text-sm text-slate-700">
+                    Amount needed, repayment option preference
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-teal-500 text-white p-2 rounded-full mr-4">
+                  <i class="fas fa-user-friends"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    Cosigner Information
+                  </h3>
+                  <p class="text-sm text-slate-700">
+                    If applicable, details about your cosigner
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a href="#"
+              class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center">
+              Start Your Application
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-col md:flex-row mb-16">
+          <div class="md:w-1/3 flex justify-center md:justify-start mb-6 md:mb-0">
+            <div class="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center">
+              <span class="text-indigo-700 text-3xl font-bold">4</span>
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-900">
+              Review & Approval
+            </h2>
+            <p class="text-slate-700 mb-6">
+              After submitting your application:
+            </p>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start">
+                <div class="bg-teal-100 p-1 rounded-full mr-4 mt-1">
+                  <i class="fas fa-check text-teal-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    Instant Preliminary Decision
+                  </h3>
+                  <p class="text-slate-700">
+                    Get an initial response within minutes of application
+                    submission
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-teal-100 p-1 rounded-full mr-4 mt-1">
+                  <i class="fas fa-check text-teal-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    Final Approval
+                  </h3>
+                  <p class="text-slate-700">
+                    Complete verification process (typically 2-5 business
+                    days)
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-teal-100 p-1 rounded-full mr-4 mt-1">
+                  <i class="fas fa-check text-teal-600"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    Loan Certification
+                  </h3>
+                  <p class="text-slate-700">
+                    Your school verifies enrollment and cost of attendance
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/3 flex justify-center md:justify-start mb-6 md:mb-0">
+            <div class="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center">
+              <span class="text-indigo-700 text-3xl font-bold">5</span>
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-900">
+              Funds Disbursement
+            </h2>
+            <p class="text-slate-700 mb-6">
+              Once approved, funds are sent directly to your school according
+              to their schedule:
+            </p>
+            <div class="bg-indigo-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="bg-teal-500 text-white p-2 rounded-full mr-4">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    School Certification
+                  </h3>
+                  <p class="text-sm text-slate-700">
+                    We work with your school to verify details
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="bg-teal-500 text-white p-2 rounded-full mr-4">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">
+                    Disbursement Timing
+                  </h3>
+                  <p class="text-sm text-slate-700">
+                    Funds sent according to academic term dates
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="bg-teal-500 text-white p-2 rounded-full mr-4">
+                  <i class="fas fa-money-check-alt"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-indigo-800">Excess Funds</h3>
+                  <p class="text-sm text-slate-700">
+                    Any remaining funds after tuition are sent to you
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Space -->
+    <!-- ads  -->
+    <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+        <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+
+    </div>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-indigo-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">
+        Frequently Asked Questions
+      </h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <button class="flex justify-between items-center w-full text-left focus:outline-none"
+              onclick="toggleFAQ(1)">
+              <h3 class="text-lg font-semibold text-indigo-800">
+                How long does the application process take?
+              </h3>
+              <i class="fas fa-chevron-down text-teal-500 transition-transform duration-300" id="faq-icon-1"></i>
+            </button>
+            <div class="mt-3 text-slate-700 hidden" id="faq-answer-1">
+              <p>
+                The initial application takes about 15-20 minutes to complete.
+                You'll receive an instant preliminary decision. Final approval
+                typically takes 2-5 business days after all required documents
+                are submitted. The entire process from application to funds
+                disbursement usually takes 2-3 weeks.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <button class="flex justify-between items-center w-full text-left focus:outline-none"
+              onclick="toggleFAQ(2)">
+              <h3 class="text-lg font-semibold text-indigo-800">
+                Do I need a cosigner?
+              </h3>
+              <i class="fas fa-chevron-down text-teal-500 transition-transform duration-300" id="faq-icon-2"></i>
+            </button>
+            <div class="mt-3 text-slate-700 hidden" id="faq-answer-2">
+              <p>
+                International students typically require a cosigner who is a
+                U.S. citizen or permanent resident. Domestic students with
+                established credit may qualify without a cosigner, but having
+                one can help you secure a lower interest rate. We offer
+                cosigner release after 24-48 months of on-time payments.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <button class="flex justify-between items-center w-full text-left focus:outline-none"
+              onclick="toggleFAQ(3)">
+              <h3 class="text-lg font-semibold text-indigo-800">
+                When do I need to start repaying my loan?
+              </h3>
+              <i class="fas fa-chevron-down text-teal-500 transition-transform duration-300" id="faq-icon-3"></i>
+            </button>
+            <div class="mt-3 text-slate-700 hidden" id="faq-answer-3">
+              <p>
+                This depends on the repayment option you choose. With
+                immediate repayment, you'll start paying principal and
+                interest right away. With deferred repayment, you won't need
+                to make payments while you're in school and during your
+                6-month grace period after graduation. Interest-only options
+                allow you to pay just the interest while in school.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <button class="flex justify-between items-center w-full text-left focus:outline-none"
+              onclick="toggleFAQ(4)">
+              <h3 class="text-lg font-semibold text-indigo-800">
+                Can I use the loan for study abroad programs?
+              </h3>
+              <i class="fas fa-chevron-down text-teal-500 transition-transform duration-300" id="faq-icon-4"></i>
+            </button>
+            <div class="mt-3 text-slate-700 hidden" id="faq-answer-4">
+              <p>
+                Yes! Our loans can be used for study abroad programs as long
+                as they're approved by your home institution. We can also fund
+                full degrees at international institutions that meet our
+                eligibility requirements. The funds can cover tuition, room
+                and board, travel expenses, and other education-related costs.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a href="#"
+            class="text-indigo-700 font-semibold hover:text-indigo-900 transition duration-300 inline-flex items-center">
+            View all frequently asked questions
+            <i class="fas fa-chevron-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">
+        Ready to Begin Your Application?
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Start your journey toward educational funding today with our simple,
+        transparent process.
+      </p>
+      <a href="#"
+        class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">Apply
+        Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-teal-300">EduFund</h3>
+          <p class="text-slate-400">
+            Providing comprehensive education financing solutions to empower
+            students worldwide in achieving their academic goals.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="index.html" class="text-slate-400 hover:text-teal-300 transition duration-300">Home</a>
+            </li>
+            <li>
+              <a href="benefits.html" class="text-slate-400 hover:text-teal-300 transition duration-300">Loan
+                Benefits</a>
+            </li>
+            <li>
+              <a href="process.html" class="text-slate-400 hover:text-teal-300 transition duration-300">Application
+                Process</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Resources</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Financial Aid Guide</a>
+            </li>
+            <li>
+              <a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Repayment Strategies</a>
+            </li>
+            <li>
+              <a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Budgeting Tools</a>
+            </li>
+            <li>
+              <a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Career Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500">
+        <p>
+          &copy; 2023 wealthora.info. All rights reserved. |
+          <a href="#" class="hover:text-teal-300 transition duration-300">Privacy Policy</a>
+          |
+          <a href="#" class="hover:text-teal-300 transition duration-300">Terms of Service</a>
+          |
+          <a href="#" class="hover:text-teal-300 transition duration-300">Disclosures</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ads  -->
+  <div id="ad-anchor-slot"></div>
+
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      alert('Right-click is disabled to protect our content.');
+    });
+
+    // Disable keyboard shortcuts
+    document.onkeydown = function (e) {
+      if (
+        (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+        e.key === 'F12' ||
+        (e.metaKey && e.altKey && e.key === 'i')
+      ) {
+        e.preventDefault();
+        alert('Access to developer tools and source code is disabled to protect our content.');
+        return false;
+      }
+      return true;
+    };
+
+    // Disable text selection
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable drag and drop
+    document.addEventListener('dragstart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+
+  <script>
+    window.googletag = window.googletag || { cmd: [] };
+    var anchorSlot;
+    googletag.cmd.push(function () {
+      anchorSlot = googletag.defineOutOfPageSlot('/23270265301/sahajanand_wealthora.info_native', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+      if (anchorSlot) {
+        anchorSlot.addService(googletag.pubads());
+      }
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("click", function () {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      });
+
+    // FAQ toggle functionality
+    function toggleFAQ(number) {
+      const answer = document.getElementById(`faq-answer-${number}`);
+      const icon = document.getElementById(`faq-icon-${number}`);
+
+      answer.classList.toggle("hidden");
+      icon.classList.toggle("rotate-180");
+    }
+  </script>
+</body>
+
+</html>

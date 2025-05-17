@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wealthora.info</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+
+    <script>
+      (function () {
+        window.googletag = window.googletag || { cmd: [] };
+
+        let adSlot1, adSlot2, anchorSlot;
+        const refreshInterval = 30000;
+        let refreshTimer;
+
+        function setupAds() {
+          googletag.cmd.push(function () {
+            const pubads = googletag.pubads();
+            pubads.enableSingleRequest();
+            pubads.setCentering(true);
+
+            if (window.geoTarget) {
+              pubads.setLocation(window.geoTarget);
+            }
+
+            adSlot1 = googletag
+              .defineSlot(
+                "/23270265301/sahajanand_wealthora.info_native",
+                [
+                  [728, 90],
+                  [300, 250],
+                ],
+                "ad-slot-1"
+              )
+              .addService(pubads);
+
+            adSlot2 = googletag
+              .defineSlot(
+                "/23270265301/sahajanand_wealthora.info_native",
+                [
+                  [300, 250],
+                  [336, 280],
+                ],
+                "ad-slot-2"
+              )
+              .addService(pubads);
+
+            anchorSlot = googletag.defineOutOfPageSlot(
+              "/23270265301/sahajanand_wealthora.info_native",
+              googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+            );
+
+            if (anchorSlot) {
+              anchorSlot.addService(pubads);
+              anchorSlot.setElementId("ad-anchor-slot");
+            }
+
+            pubads.addEventListener("slotRenderEnded", function (event) {
+              const slotId = event.slot.getSlotElementId();
+              const isEmpty = event.isEmpty;
+
+              if (isEmpty && document.getElementById(slotId)) {
+                document.getElementById(slotId).style.display = "none";
+              }
+            });
+
+            googletag.enableServices();
+
+            try {
+              if (document.getElementById("ad-slot-1")) {
+                googletag.display("ad-slot-1");
+              }
+              if (document.getElementById("ad-slot-2")) {
+                googletag.display("ad-slot-2");
+              }
+              if (document.getElementById("ad-anchor-slot")) {
+                googletag.display("ad-anchor-slot");
+              }
+            } catch (error) {
+              console.log("Error displaying ads:", error);
+            }
+
+            setupAdRefresh();
+          });
+        }
+
+        function setupAdRefresh() {
+          if (refreshTimer) {
+            clearInterval(refreshTimer);
+          }
+
+          refreshTimer = setInterval(function () {
+            try {
+              const slotsToRefresh = [];
+              if (adSlot1) slotsToRefresh.push(adSlot1);
+              if (adSlot2) slotsToRefresh.push(adSlot2);
+
+              if (slotsToRefresh.length > 0) {
+                googletag.cmd.push(function () {
+                  googletag.pubads().refresh(slotsToRefresh);
+                });
+              }
+            } catch (error) {
+              console.log("Error refreshing ads:", error);
+              clearInterval(refreshTimer);
+            }
+          }, refreshInterval);
+        }
+
+        function checkAdBlocker() {
+          const testAd = document.createElement("div");
+          testAd.innerHTML = "&nbsp;";
+          testAd.className = "adsbox";
+          document.body.appendChild(testAd);
+
+          setTimeout(function () {
+            if (testAd.offsetHeight === 0) {
+              console.log("Ad blocker detected");
+            }
+            document.body.removeChild(testAd);
+          }, 100);
+        }
+
+        if (
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
+        ) {
+          setupAds();
+          checkAdBlocker();
+        } else {
+          document.addEventListener("DOMContentLoaded", function () {
+            setupAds();
+            checkAdBlocker();
+          });
+        }
+
+        window.addEventListener("beforeunload", function () {
+          if (refreshTimer) {
+            clearInterval(refreshTimer);
+          }
+        });
+      })();
+    </script>
+
+
+
+</head>
+<body class="bg-slate-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-indigo-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight">wealthora<span class="text-teal-300">info</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-teal-300 transition duration-300">Home</a>
+                <a href="benefits.html" class="hover:text-teal-300 transition duration-300">Benefits</a>
+                <a href="process.html" class="hover:text-teal-300 transition duration-300">Process</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-indigo-800 px-4 py-2" id="mobile-menu">
+            <a href="index.html" class="block py-2 hover:text-teal-300 transition duration-300">Home</a>
+            <a href="benefits.html" class="block py-2 hover:text-teal-300 transition duration-300">Benefits</a>
+            <a href="process.html" class="block py-2 hover:text-teal-300 transition duration-300">Process</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-800 to-indigo-600 text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Comprehensive <span class="text-teal-300">Education Financing</span> Solutions</h1>
+                <p class="text-xl mb-8">Access tailored loan products designed specifically for students pursuing higher education across diverse academic disciplines and institutions worldwide.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="process.html" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">Apply Now</a>
+                    <a href="#loan-types" class="bg-transparent hover:bg-indigo-700 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300 text-center">Explore Options</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://img.freepik.com/free-vector/hand-holding-pencil-writing-document_74855-5254.jpg" alt="Education Loan" class="w-full max-w-md rounded-lg shadow-2xl animate-float">
+            </div>
+        </div>
+    </section>
+
+      <!-- Ad Space -->
+         <!-- ads  -->
+    <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+        <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+
+    </div>
+
+    <!-- Education Loan Types -->
+    <section id="loan-types" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">Comprehensive Education Loan Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-indigo-700 text-4xl mb-4">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-900">Undergraduate Loans</h3>
+                    <p class="text-slate-700 mb-4">Financing solutions for students pursuing bachelor's degrees across all academic disciplines.</p>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Coverage for 4-year programs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Deferred payment options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Competitive fixed/variable rates</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-indigo-700 text-4xl mb-4">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-900">Graduate Loans</h3>
+                    <p class="text-slate-700 mb-4">Specialized financing for master's, doctoral, and professional degree programs.</p>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Higher borrowing limits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Extended repayment terms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Career-specific loan products</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-indigo-700 text-4xl mb-4">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-900">International Study Loans</h3>
+                    <p class="text-slate-700 mb-4">Funding solutions for students pursuing education abroad at accredited institutions.</p>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Multi-currency disbursement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Global institution coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Travel expense inclusion</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-indigo-700 text-4xl mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-900">Vocational Training Loans</h3>
+                    <p class="text-slate-700 mb-4">Financing for certificate programs, technical training, and professional certifications.</p>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Short-term program coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Equipment financing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Accelerated repayment options</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-indigo-700 text-4xl mb-4">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-900">Merit-Based Loans</h3>
+                    <p class="text-slate-700 mb-4">Special loan products for high-achieving students with competitive terms.</p>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Reduced interest rates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Cosigner release options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Academic performance incentives</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-indigo-700 text-4xl mb-4">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-900">Parent Loans</h3>
+                    <p class="text-slate-700 mb-4">Financing options for parents supporting their children's education.</p>
+                    <ul class="text-slate-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Immediate repayment options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Tax-deductible interest</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span>Higher borrowing limits</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">Education Loan Calculator</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-6">
+                    <label class="block text-slate-700 mb-2">Loan Amount ($)</label>
+                    <input type="range" min="1000" max="200000" step="1000" value="50000" class="w-full" id="loanAmount">
+                    <div class="flex justify-between mt-2">
+                        <span>1,000</span>
+                        <span id="amountValue">50,000</span>
+                        <span>200,000</span>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-slate-700 mb-2">Loan Term (years)</label>
+                    <input type="range" min="1" max="25" value="10" class="w-full" id="loanTerm">
+                    <div class="flex justify-between mt-2">
+                        <span>1</span>
+                        <span id="termValue">10</span>
+                        <span>25</span>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-slate-700 mb-2">Interest Rate (%)</label>
+                    <input type="range" min="1" max="15" step="0.1" value="5.5" class="w-full" id="interestRate">
+                    <div class="flex justify-between mt-2">
+                        <span>1%</span>
+                        <span id="rateValue">5.5%</span>
+                        <span>15%</span>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-slate-700 mb-2">Repayment Start</label>
+                    <select class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option>Immediately</option>
+                        <option>Interest-Only While in School</option>
+                        <option>Full Deferment (6 months after graduation)</option>
+                    </select>
+                </div>
+                <button id="calculateBtn" class="w-full bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-6">
+                    Calculate Payment Schedule
+                </button>
+                <div id="result" class="text-center p-4 bg-indigo-100 rounded-lg hidden">
+                    <h3 class="text-xl font-semibold text-indigo-900">Estimated Monthly Payment</h3>
+                    <p class="text-3xl font-bold text-indigo-700 mt-2">$<span id="monthlyPayment">0</span></p>
+                    <p class="text-slate-600 mt-2">Total interest paid: $<span id="totalInterest">0</span></p>
+                    <p class="text-slate-600">Total repayment: $<span id="totalRepayment">0</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Ad Space -->
+        <!-- ads  -->
+    <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+        <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+
+    </div>
+
+    <!-- Key Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">Key Features of Our Education Loans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-start mb-8">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-6">
+                            <i class="fas fa-dollar-sign text-indigo-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-900">Competitive Interest Rates</h3>
+                            <p class="text-slate-700">Our education loans offer interest rates that are consistently lower than credit cards and personal loans. We provide both fixed and variable rate options to suit different financial strategies. Fixed rates provide payment stability, while variable rates may offer initial savings with the potential for fluctuation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-8">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-6">
+                            <i class="fas fa-calendar-check text-indigo-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-900">Flexible Repayment Terms</h3>
+                            <p class="text-slate-700">Choose from multiple repayment options including immediate repayment, interest-only payments while in school, or full deferment until after graduation. Our graduated repayment plans allow for smaller initial payments that increase as your earning potential grows. Loan terms range from 5 to 25 years depending on the loan amount.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-start mb-8">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-6">
+                            <i class="fas fa-handshake text-indigo-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-900">Cosigner Options & Release</h3>
+                            <p class="text-slate-700">Students with limited credit history can apply with a creditworthy cosigner to qualify for better rates. After making 24-48 consecutive on-time payments, borrowers may apply to release their cosigner from the loan obligation. This provides financial independence while maintaining the initial benefit of a cosigner.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-8">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-6">
+                            <i class="fas fa-shield-alt text-indigo-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-900">Borrower Protections</h3>
+                            <p class="text-slate-700">All loans include death and disability discharge provisions. We offer temporary hardship forbearance options for qualified borrowers experiencing financial difficulty. Our loans have no prepayment penalties, allowing you to pay off your loan faster without additional fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">Education Loan Comparison</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-lg overflow-hidden shadow-lg">
+                    <thead class="bg-indigo-800 text-white">
+                        <tr>
+                            <th class="py-4 px-6 text-left">Feature</th>
+                            <th class="py-4 px-6 text-center">Federal Student Loans</th>
+                            <th class="py-4 px-6 text-center">EduFund Loans</th>
+                            <th class="py-4 px-6 text-center">Other Private Loans</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Interest Rates</td>
+                            <td class="py-4 px-6 text-center">Fixed by government</td>
+                            <td class="py-4 px-6 text-center text-indigo-700 font-semibold">Fixed or variable, competitive</td>
+                            <td class="py-4 px-6 text-center">Typically higher</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                            <td class="py-4 px-6 font-medium">Repayment Options</td>
+                            <td class="py-4 px-6 text-center">Standard plans available</td>
+                            <td class="py-4 px-6 text-center text-indigo-700 font-semibold">Multiple flexible options</td>
+                            <td class="py-4 px-6 text-center">Often limited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Borrowing Limits</td>
+                            <td class="py-4 px-6 text-center">Annual/cumulative caps</td>
+                            <td class="py-4 px-6 text-center text-indigo-700 font-semibold">Up to cost of attendance</td>
+                            <td class="py-4 px-6 text-center">Varies by lender</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                            <td class="py-4 px-6 font-medium">Cosigner Release</td>
+                            <td class="py-4 px-6 text-center">Not applicable</td>
+                            <td class="py-4 px-6 text-center text-indigo-700 font-semibold">After 24-48 payments</td>
+                            <td class="py-4 px-6 text-center">Rarely offered</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">International Schools</td>
+                            <td class="py-4 px-6 text-center">Limited coverage</td>
+                            <td class="py-4 px-6 text-center text-indigo-700 font-semibold">Thousands worldwide</td>
+                            <td class="py-4 px-6 text-center">Limited coverage</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-slate-600">*This comparison is for general informational purposes only. Specific terms may vary based on individual circumstances.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Space -->
+    <!-- <div class="container mx-auto px-4 py-6">
+        <div class="bg-slate-200 rounded-lg p-4 text-center h-32 flex items-center justify-center">
+            <p class="text-slate-500">Advertisement Space</p>
+        </div>
+    </div> -->
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">Education Loan FAQs</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6 border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-slate-50 hover:bg-slate-100 transition duration-300">
+                        <h3 class="text-lg font-semibold text-left text-indigo-900">What expenses can education loans cover?</h3>
+                        <i class="fas fa-chevron-down text-indigo-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 pt-2">
+                        <p class="text-slate-700">Education loans can cover a comprehensive range of educational expenses including:</p>
+                        <ul class="list-disc pl-6 mt-3 space-y-2 text-slate-700">
+                            <li>Tuition and mandatory fees charged by the educational institution</li>
+                            <li>On-campus or off-campus housing and meal plans</li>
+                            <li>Textbooks, computers, and required equipment</li>
+                            <li>Transportation costs for study abroad programs</li>
+                            <li>Licensing and certification exam fees</li>
+                            <li>Disability-related expenses for students with disabilities</li>
+                            <li>Study abroad program costs for international students</li>
+                        </ul>
+                        <p class="mt-3 text-slate-700">The school's financial aid office must certify that all expenses are education-related.</p>
+                    </div>
+                </div>
+                <div class="mb-6 border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-slate-50 hover:bg-slate-100 transition duration-300">
+                        <h3 class="text-lg font-semibold text-left text-indigo-900">How does the application process work?</h3>
+                        <i class="fas fa-chevron-down text-indigo-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 pt-2">
+                        <p class="text-slate-700">Our streamlined application process involves these key steps:</p>
+                        <ol class="list-decimal pl-6 mt-3 space-y-3 text-slate-700">
+                            <li><strong>Pre-qualification:</strong> Check your potential rates without affecting your credit score</li>
+                            <li><strong>Formal application:</strong> Complete the full application with personal, financial, and academic information</li>
+                            <li><strong>School certification:</strong> Your institution verifies enrollment and cost of attendance</li>
+                            <li><strong>Credit decision:</strong> We review your application and make a lending decision</li>
+                            <li><strong>Loan acceptance:</strong> Review and sign your loan agreement</li>
+                            <li><strong>Funds disbursement:</strong> Money is sent directly to your school according to their schedule</li>
+                        </ol>
+                        <p class="mt-3 text-slate-700">The entire process typically takes 2-4 weeks, depending on how quickly required documents are submitted.</p>
+                    </div>
+                </div>
+                <div class="mb-6 border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-slate-50 hover:bg-slate-100 transition duration-300">
+                        <h3 class="text-lg font-semibold text-left text-indigo-900">What are the eligibility requirements?</h3>
+                        <i class="fas fa-chevron-down text-indigo-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 pt-2">
+                        <p class="text-slate-700">To qualify for an education loan, applicants must meet these requirements:</p>
+                        <ul class="list-disc pl-6 mt-3 space-y-2 text-slate-700">
+                            <li>Be enrolled at least half-time in an eligible degree or certificate program at an accredited institution</li>
+                            <li>Meet satisfactory academic progress standards set by the school</li>
+                            <li>Be a citizen or permanent resident (or apply with a creditworthy cosigner who is)</li>
+                            <li>Pass a credit check demonstrating ability to repay (or have a cosigner who does)</li>
+                            <li>Be of legal age to sign a loan contract in your state</li>
+                            <li>Not be in default on any existing education loans</li>
+                        </ul>
+                        <p class="mt-3 text-slate-700">International students may apply with a qualified cosigner who is a U.S. citizen or permanent resident.</p>
+                    </div>
+                </div>
+                <div class="mb-6 border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-slate-50 hover:bg-slate-100 transition duration-300">
+                        <h3 class="text-lg font-semibold text-left text-indigo-900">How does repayment work after graduation?</h3>
+                        <i class="fas fa-chevron-down text-indigo-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 pt-2">
+                        <p class="text-slate-700">Our repayment process is designed to accommodate graduates' transition into the workforce:</p>
+                        <ul class="list-disc pl-6 mt-3 space-y-2 text-slate-700">
+                            <li><strong>Grace period:</strong> Most loans have a 6-month grace period after graduation before payments begin</li>
+                            <li><strong>Payment options:</strong> Choose from standard, graduated, or extended repayment plans</li>
+                            <li><strong>Auto-debit discount:</strong> Reduce your interest rate by enrolling in automatic payments</li>
+                            <li><strong>Online management:</strong> Access your account 24/7 to make payments, check balances, and update information</li>
+                            <li><strong>Deferment/forbearance:</strong> Temporary payment postponement options for qualified hardships</li>
+                            <li><strong>Prepayment:</strong> Pay extra or pay off early without penalty</li>
+                        </ul>
+                        <p class="mt-3 text-slate-700">We offer income-driven repayment options for borrowers facing financial challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Begin Your Educational Journey Today</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Take the first step toward funding your academic aspirations with our comprehensive education loan solutions.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="process.html" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">Start Application</a>
+                <a href="benefits.html" class="bg-transparent hover:bg-indigo-800 text-white font-bold py-3 px-8 border-2 border-white rounded-lg transition duration-300 inline-block">Explore Benefits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-300">wealthora.info</h3>
+                    <p class="text-slate-400">Providing comprehensive education financing solutions to empower students worldwide in achieving their academic goals.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-slate-400 hover:text-teal-300 transition duration-300">Home</a></li>
+                        <li><a href="benefits.html" class="text-slate-400 hover:text-teal-300 transition duration-300">Loan Benefits</a></li>
+                        <li><a href="process.html" class="text-slate-400 hover:text-teal-300 transition duration-300">Application Process</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Loan Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Financial Aid Guide</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Repayment Strategies</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Budgeting Tools</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-teal-300 transition duration-300">Career Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500">
+                <p>&copy; 2023 wealthora.info. All rights reserved. | <a href="#" class="hover:text-teal-300 transition duration-300">Privacy Policy</a> | <a href="#" class="hover:text-teal-300 transition duration-300">Terms of Service</a> | <a href="#" class="hover:text-teal-300 transition duration-300">Disclosures</a></p>
+            </div>
+        </div>
+    </footer>
+ 
+
+    <!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+      // Disable right-click
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        alert('Right-click is disabled to protect our content.');
+      });
+
+      // Disable keyboard shortcuts
+      document.onkeydown = function (e) {
+        if (
+          (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+          e.key === 'F12' ||
+          (e.metaKey && e.altKey && e.key === 'i')
+        ) {
+          e.preventDefault();
+          alert('Access to developer tools and source code is disabled to protect our content.');
+          return false;
+        }
+        return true;
+      };
+
+      // Disable text selection
+      document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+      });
+
+      // Disable drag and drop
+      document.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+      });
+    </script>
+
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      var anchorSlot;
+      googletag.cmd.push(function () {
+        anchorSlot = googletag.defineOutOfPageSlot('/23270265301/sahajanand_wealthora.info_native', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+        if (anchorSlot) {
+          anchorSlot.addService(googletag.pubads());
+        }
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Loan calculator functionality
+        document.getElementById('loanAmount').addEventListener('input', function() {
+            document.getElementById('amountValue').textContent = 
+                parseInt(this.value).toLocaleString();
+        });
+
+        document.getElementById('loanTerm').addEventListener('input', function() {
+            document.getElementById('termValue').textContent = this.value;
+        });
+
+        document.getElementById('interestRate').addEventListener('input', function() {
+            document.getElementById('rateValue').textContent = this.value + '%';
+        });
+
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const amount = parseFloat(document.getElementById('loanAmount').value);
+            const years = parseFloat(document.getElementById('loanTerm').value);
+            const rate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+            const payments = years * 12;
+            
+            // Calculate monthly payment
+            const x = Math.pow(1 + rate, payments);
+            const monthly = (amount * x * rate) / (x - 1);
+            const totalRepayment = monthly * payments;
+            const totalInterest = totalRepayment - amount;
+            
+            document.getElementById('monthlyPayment').textContent = monthly.toFixed(2);
+            document.getElementById('totalInterest').textContent = totalInterest.toFixed(2);
+            document.getElementById('totalRepayment').textContent = totalRepayment.toFixed(2);
+            document.getElementById('result').classList.remove('hidden');
+            
+            // Scroll to result
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
